@@ -7,5 +7,14 @@
 }
 
 .text {
+ @include adaptiveValue("font-size", 18, 16);
  line-height: math.div(30, 18);
+}
+
+.num-block {
+ @include adaptiveValue("font-size", 26, 20);
+ @include adaptiveValue("margin-bottom", 80, 30);
+ display: block;
+ line-height: math.div(32, 26);
+ color: $btnColor;
 }

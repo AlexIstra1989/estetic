@@ -1,28 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-    <section class="main-block">
-     <div class="main-block__container">
-      <div class="main-block__inner">
-       <div class="main-block__body">
-        <h1 class="main-block__title">Студия массажа “Estetic”</h1>
-        <p class="main-block__text">Не гладим по спине, а реально решаем проблемы!</p>
-        <a class="main-block__button button" href="#">Записаться</a>
-       </div>
-       <!-- <img class="main-block__image" src="img/main-block/image-1.png" alt="#"> -->
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+ <div class="wrapper">
+  @@include('html/_header.htm',{})
+  <main class="page">
+   <section class="main-block">
+    <div class="main-block__container">
+     <div class="main-block__inner">
+      <div class="main-block__body">
+       <h1 class="main-block__title">Студия массажа “Estetic”</h1>
+       <p class="main-block__text">Не гладим по спине, а реально решаем проблемы!</p>
+       <a class="main-block__button button" href="#">Записаться</a>
       </div>
      </div>
-    </section>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+    </div>
+   </section>
+   <section class="services" id="services">
+    <div class="services__container">
+     <span class="num-block">01</span>
+     <div class="services__top">
+      <h2 class="services__title title">Услуги</h2>
+      <p class="services__text">В данном разделе вы можете увидеть все услуги, которые оказывает наша студия массажа, и
+       описания к ним.</p>
+     </div>
+     <div data-tabs class="tabs">
+      <nav data-tabs-titles class="tabs__navigation">
+       <div class="services__item">
+        <img class="services__image" src="img/services/massage-1.svg" alt="#">
+        <button type="button" class="tabs__title _tab-active">Оздоровительный массаж</button>
+       </div>
+       <div class="services__item">
+        <img class="services__image" src="img/services/infrared.svg" alt="#">
+        <button type="button" class="tabs__title">Японский массаж</button>
+       </div>
+       <div class="services__item">
+        <img class="services__image" src="img/services/acupuncture.svg" alt="#">
+        <button type="button" class="tabs__title">Антицеллюлитный массаж</button>
+       </div>
+       <div class="services__item">
+        <img class="services__image" src="img/services/spa.svg" alt="#">
+        <button type="button" class="tabs__title">Общий массаж</button>
+       </div>
+       <div class="services__item">
+        <img class="services__image" src="img/services/massage-2.svg" alt="#">
+        <button type="button" class="tabs__title">Буккальный массаж лица</button>
+       </div>
+       <div class="services__item">
+        <img class="services__image" src="img/services/sauna.svg" alt="#">
+        <button type="button" class="tabs__title">SPA уход</button>
+       </div>
+      </nav>
+      <div data-tabs-body class="tabs__content">
+       <div class="tabs__body tabs-body">
+        <div class="tabs-body__top">
+         <h3 class="tabs-body__title"><span>Оздоровительный массаж</span>
+          в студии массажа Estetic</h3>
+         <div class="tabs-body__descr text">
+          <p> Оздоровительный массаж, который проводят специалисты Студии массажа “Estetic”
+           отличается глубиной и интенсивностью.
+           Он является отличным способом подправить свою физическую форму для
+           людей, которые ведут активный образ жизни и для спортсменов. Спортивный массаж повышает выносливость, делает
+           мышцы более крепкими, готовит организм к нагрузкам.</p>
+          <p>Также спортивный массаж снимает усталость, болевые ощущения и восстанавливает
+           организм. Кроме того, спортивный массаж применяют для профилактики болезней суставов, мышц,
+           костей и связок. Если вовремя заняться спортивным массажем, можно с большей вероятностью избежать травм.</p>
+         </div>
+        </div>
+        <div class="tabs-body__bottom">
+         <img class="tabs-body__image" src="img/services/tabs-image-1.jpg" alt="#">
+         <div class="tabs-body__bottom-box">
+          <p class="tabs-body__text text">Оставьте заявку и получите доступ 
+           к ограниченным акциям!</p>
+          <div class="tabs-body__links">
+           <a href="" class="tabs-body__link button">Записаться</a>
+           <a href="" class="tabs-body__link tabs-body__link_white button">Подробнее</a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="tabs__body">
+        Содержимое 2 таба
+       </div>
+       <div class="tabs__body">
+        Содержимое 3 таба
+       </div>
+       <div class="tabs__body">
+        Содержимое 4 таба
+       </div>
+       <div class="tabs__body">
+        Содержимое 5 таба
+       </div>
+       <div class="tabs__body">
+        Содержимое 6 таба
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  @@include('html/_footer.htm',{})
+ </div>
+ @@include('html/_popup.htm',{})
+ @@include('html/_js.htm',{})
+</body>
+
 </html>

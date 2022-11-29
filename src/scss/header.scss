@@ -4,6 +4,8 @@
  @include adaptiveValue("padding-bottom", 70, 50);
  border-bottom: rem(1) solid $btnColor;
  background-color: $bgColor;
+ position: fixed;
+ width: 100%;
  // .header__inner
  &__inner {
   display: flex;
