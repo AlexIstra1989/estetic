@@ -3,9 +3,22 @@
 
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	padding: rem(20);
+ font-weight: 600;
+ @include adaptiveValue("font-size", 20, 16);
+ line-height: math.div(42, 20);
+ color: $primaryColor;
+ background-color: $btnColor;
+ border: rem(1) solid transparent;
+ transition: all 0.6s;
+ max-width: rem(390);
+ width: 100%;
+ justify-content: center;
 	@media (any-hover: hover) {
 		&:hover {
+   background-color: $primaryColor;
+   color: $btnColor;
+   border-color: $btnColor;
 		}
 	}
 	&._fw {

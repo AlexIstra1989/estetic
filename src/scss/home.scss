@@ -1,3 +1,36 @@
 //====================================================================================================
-
+.main-block {
+ background: url("../img/main-block/image-1.png"), $bgColor;
+ background-repeat: no-repeat;
+ background-size: auto;
+ background-position: top right;
+ height: rem(940);
+ @media (max-width: $mobile) {
+  background: $bgColor;
+  height: auto;
+ }
+ // .main-block__body
+ &__body {
+  max-width: rem(830);
+  width: 100%;
+  @include adaptiveValue("padding-top", 230, 50);
+  @media (max-width: $tablet) {
+   padding-bottom: rem(50);
+  }
+ }
+ // .main-block__title
+ &__title {
+  font-family: "Comfortaa";
+  font-weight: 700;
+  @include adaptiveValue("font-size", 58, 42);
+  line-height: math.div( 64, 58);
+  margin-bottom: rem(24);
+ }
+ // .main-block__text
+ &__text {
+  @include adaptiveValue("font-size", 26, 20);
+  line-height: math.div(42, 26);
+  @include adaptiveValue("margin-bottom", 80, 30);
+ }
+}
 //====================================================================================================
