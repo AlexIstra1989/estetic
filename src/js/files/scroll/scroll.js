@@ -106,7 +106,7 @@ export function headerScroll() {
 // Прилипающий блок
 export function stickyBlock() {
 	addWindowScrollEvent = true;
-	// data-sticky для родителя внутри которого прилипает блок *
+	//data-sticky для родителя внутри которого прилипает блок *
 	// data-sticky-header для родителя, учитываем высоту хедера
 	// data-sticky-top="" для родителя, можно указать отступ сверху
 	// data-sticky-bottom="" для родителя, можно указать отступ снизу

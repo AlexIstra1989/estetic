@@ -4,7 +4,8 @@
  background-repeat: no-repeat;
  background-size: auto;
  background-position: top right;
- height: rem(940);
+ height: rem(760);
+ @include adaptiveValue("margin-top", 180, 120);
  @media (max-width: $mobile) {
   background: $bgColor;
   height: auto;
@@ -25,6 +26,9 @@
   @include adaptiveValue("font-size", 58, 42);
   line-height: math.div( 64, 58);
   margin-bottom: rem(24);
+  @media (max-width: $mobileSmall) {
+   text-align: center;
+  }
  }
  // .main-block__text
  &__text {
@@ -42,6 +46,9 @@
   display: flex;
   justify-content: space-between;
   @include adaptiveValue("margin-bottom", 80, 30);
+  @media (max-width: $tablet) {
+   flex-direction: column;
+  }
  }
  // .services__text
  &__text {
@@ -49,6 +56,10 @@
   line-height: math.div(30, 20);
   max-width: rem(745);
   width: 100%;
+  @media (max-width: $tablet) {
+   margin-top: rem(20);
+   max-width: 100%;
+  }
  }
  // .services__item
  &__item {
@@ -69,21 +80,24 @@
  &__navigation {
   display: flex;
   @include adaptiveValue("gap", 90, 40);
+  @media (max-width: 1200px) {
+   flex-wrap: wrap;
+   justify-content: center;
+  }
  }
  // .tabs__title
  &__title {
   font-weight: 700;
   line-height: math.div(26, 18);
   // ._tab-active
-  &_tab-active {
+  &._tab-active {
+   color: $btnColor;
   }
  }
  // .tabs__content
  &__content {
-  padding-top: rem(80);
- }
- // .tabs__body
- &__body {
+  @include adaptiveValue("padding-top", 80, 40);
+  @include adaptiveValue("padding-bottom", 80, 40);
  }
 }
 //========================================================================================
@@ -91,8 +105,14 @@
  // .tabs-body__top
  &__top {
   display: flex;
-  justify-content: space-between;
   background-color: $bgColor;
+  @include adaptiveValue("column-gap", 110, 40);
+  @include adaptiveValue("padding-top", 80, 20);
+  @include adaptiveValue("padding-bottom", 80, 20);
+  @media (max-width: 1150px) {
+   flex-direction: column;
+   margin-bottom: rem(30);
+  }
  }
  // .tabs-body__title
  &__title {
@@ -104,6 +124,10 @@
   span {
    color: $btnColor;
   }
+  @media (max-width: 1150px) {
+   max-width: 100%;
+   margin-bottom: rem(30);
+  }
  }
  // .tabs-body__descr
  &__descr {
@@ -114,21 +138,39 @@
     margin-bottom: rem(20);
    }
   }
+  @media (max-width: 1150px) {
+   max-width: 100%;
+  }
  }
  // .tabs-body__bottom
  &__bottom {
   display: flex;
   align-items: flex-end;
-  justify-content: space-between;
+  @include adaptiveValue("column-gap", 110, 20);
   margin-top: rem(-190);
+  @media (max-width: 1150px) {
+   margin-top: 0;
+  }
+  @media (max-width: $tablet) {
+   flex-direction: column;
+   align-items: flex-start;
+  }
  }
  // .tabs-body__image
  &__image {
+  @media (max-width: $tablet) {
+   width: 100%;
+   margin-bottom: rem(30);
+  }
  }
  // .tabs-body__bottom-box
  &__bottom-box {
   max-width: rem(670);
   width: 100%;
+  @media (max-width: $tablet) {  
+   max-width: 100%;
+   text-align: center;
+  }
  } 
  // .tabs-body__text
  &__text {
@@ -136,11 +178,20 @@
   max-width: rem(350);
   width: 100%;
   margin-bottom: rem(20);
+  @media (max-width: $tablet) {  
+   max-width: 100%;
+  }
  }
  // .tabs-body__links
  &__links {
   display: flex;
   gap: rem(20);
+  @media (max-width: $tablet) {  
+   justify-content: center;
+  }
+  @media (max-width: $mobileSmall) {
+   display: block;
+  }
  }
  // .tabs-body__link
  &__link {
@@ -151,3 +202,194 @@
   }
  }
 }
+//===========================================================================================================
+.promotions {
+ @include adaptiveValue("padding-bottom", 180, 60);
+ // .promotions__wrapper
+ &__wrapper {
+  background-image: url("../img/promotions/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: rem(850);
+  color: $primaryColor;
+  padding-top: rem(210);
+  @media (max-width: $tablet) {
+   height: auto;
+   @include adaptiveValue("padding-top", 120, 60);
+   @include adaptiveValue("padding-bottom", 120, 60);
+   margin-bottom: rem(30);
+  }
+ }
+ // .promotions__num-block
+ &__num-block {
+  color: $primaryColor;
+ }
+ // .promotions__top
+ &__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: $mobile) {
+   flex-direction: column;
+   gap: rem(20);
+  }
+ }
+ // .promotions__title
+ &__title {
+  color: $primaryColor;
+  max-width: rem(470);
+  width: 100%;
+ }
+ // .promotions__text
+ &__text {
+  @include adaptiveValue("font-size", 20, 16);
+  line-height: math.div(30, 20);
+  max-width: rem(740);
+  width: 100%;
+ }
+}
+//=================================================================================================================
+.offers {
+ // .offers__slider 
+ &__slider {
+  display: none; 
+  @media (max-width: $tablet) {
+   display: block;
+   margin-bottom: rem(20);
+  }
+  .swiper-pagination {
+   display: flex;
+   justify-content: center;
+   gap: rem(20);
+  }
+  .swiper-pagination-bullet {
+   @include adaptiveValue("width", 20, 10);
+   @include adaptiveValue("height", 20, 10);
+   background-color: $btnColor;
+   border-radius: 50%;
+  }
+  .swiper-pagination-bullet-active {
+   background-color: $mainColor;
+  } 
+ }
+ // .offers__wrapper
+ &__wrapper {
+  margin-bottom: rem(20);
+ }
+ // .offers__items
+ &__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @include adaptiveValue("gap", 40, 20);
+  margin-top: -20%;
+  @media (max-width: $tablet) {
+   display: none;
+  }
+ }
+ // .offers__item
+ &__item {
+  border: rem(1) solid $btnColor;
+ }
+ // .offers__image
+ &__image {
+  width: 100%;
+  margin-bottom: rem(60);
+ }
+ // .offers__item-body
+ &__item-body {
+  padding: 0 rem(45) rem(45) rem(45);
+  @media (max-width: $tablet) {
+   text-align: center;
+  }
+ }
+ // .offers__item-name
+ &__item-name {
+  font-weight: 700;
+  @include adaptiveValue("font-size", 24, 16);
+  line-height: math.div(30, 24);
+  margin-bottom: rem(30);
+ }
+}
+//===================================================================================================
+.specials {
+ @include adaptiveValue("padding-top", 120, 60);
+ // .specials__top
+ &__top {
+  display: flex;
+  align-items: flex-start;
+  @include adaptiveValue("column-gap", 170, 40);
+  margin-bottom: rem(30);
+  @media (max-width: $tablet) {
+   flex-direction: column;
+   gap: rem(20);
+  }
+ }
+ // .specials__title
+ &__title {
+  font-family: "Comfortaa";
+  @include adaptiveValue("font-size", 38, 28);
+  line-height: math.div(54, 38);
+  max-width: rem(605);
+  width: 100%;
+  span {
+   color: $btnColor;
+  }
+ }
+ // .specials__descr
+ &__descr {
+  max-width: rem(650);
+  width: 100%;
+  p {
+   &:first-child {
+    margin-bottom: rem(30);
+   }
+  }
+  @media (max-width: $tablet) {
+   max-width: 100%;
+  }
+ }
+ // .specials__bottom
+ &__bottom {
+  display: flex;
+  align-items: flex-end;
+  @include adaptiveValue("column-gap", 170, 40);
+  @media (max-width: $tablet) {
+   flex-direction: column;
+   align-items: flex-start;
+   gap: rem(20);
+  }
+ }
+ // .specials__image
+ &__image {
+  @media (max-width: $tablet) {
+   width: 100%;
+  }
+ }
+ // .specials__box
+ &__box {
+  max-width: rem(480);
+  width: 100%;
+  @media (max-width: $tablet) {
+   max-width: 100%;
+   text-align: center;
+  }
+ }
+ // .specials__text
+ &__text {
+  font-weight: 700;
+  margin-bottom: rem(20);
+ }
+}
+
+//=============================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
+//===========================================================================================================
