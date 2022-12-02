@@ -33,3 +33,33 @@
 .swiper-pagination-bullet-active {
  background-color: $mainColor;
 } 
+
+.swiper-button-prev,
+.swiper-button-next {
+ @include adaptiveValue("width", 75, 35);
+ @include adaptiveValue("height", 75, 35);
+ background-color: $btnColor;
+ border-radius: rem(60);
+ position: relative; 
+ &::before {
+  @include pseudo;
+  @include background(url("../img/icons/arrow.svg"));
+  width: rem(28);
+  height: rem(28);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ }
+}
+
+.swiper-button-prev::before {
+ transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.swiper-button-next::before {
+ transform: translate(-50%, -50%) rotate(360deg);
+}
+
+.swiper-button-disabled {
+ background-color: #E5E5E5;
+}
