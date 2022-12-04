@@ -856,7 +856,7 @@
  // .block-news__items
  &__items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   @include adaptiveValue("gap", 40, 10);
   margin-top: -20%;
   @media (max-width: $mobile) {
@@ -874,7 +874,11 @@
  }
  // .block-news__body
  &__body {
-  padding: rem(60) rem(50) rem(40) rem(50);
+  @include adaptiveValue("padding-top", 60, 30);
+  @include adaptiveValue("padding-right", 50, 25);
+  @include adaptiveValue("padding-bottom", 40, 20);
+  @include adaptiveValue("padding-left", 50, 25);
+  //padding: rem(60) rem(50) rem(40) rem(50);
  }
  // .block-news__name
  &__name {
