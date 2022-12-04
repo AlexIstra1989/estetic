@@ -1,3 +1,27 @@
 //====================================================================================================
-
+.footer {
+ background-color: $mainColor;
+ // .footer__copyright
+ &__copyright {
+  @include adaptiveValue("padding-top", 120, 30);
+  @include adaptiveValue("padding-bottom", 120, 30);
+  color: $primaryColor;
+  display: flex;
+  justify-content: space-between;
+  @media(max-width: $mobile) {
+   flex-direction: column;
+   gap: rem(20);
+  }
+ }
+ // .footer__item
+ &__item {
+  @include adaptiveValue("font-size", 18, 16);
+ }
+ // .footer__privacy
+ &__privacy {
+  width: 100%;
+  color: $btnColor;
+  border-bottom: rem(1) solid $btnColor;
+ }
+}
 //====================================================================================================

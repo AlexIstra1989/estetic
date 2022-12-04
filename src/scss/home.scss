@@ -921,11 +921,13 @@
  // .contacts__body
  &__body {
   display: flex;
+  align-items: flex-end;
   @include adaptiveValue("gap", 130, 10);
   @include adaptiveValue("font-size", 18, 16);
   line-height: math.div(60, 18);
   @media(max-width: $tablet) {
    flex-direction: column;
+   align-items: flex-start;
   }
  }
  // .contacts__info
